@@ -1,4 +1,43 @@
 .card{    
     border-style: groove;    
+    border-width: 7px;
+    border-color: white;
+    background-color: grey;
+    margin-top: 10px;
+    
+
+}
+.divButton{
+    display: flex;
+    justify-content: right;
+}
+.buttonCard{
+    font-size: xx-large;
+    font-style: oblique;
+    color: red;
+    border-style: none;
+    background: none;
+
+}
+.descriptionbox{
+    
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    
+}
+
+.imgChar{
+    border-style: groove;    
     border-color: black;
+    border-radius: 5%;
+}
+.description{
+    display: flex;
+    align-items:  center;
+    
+    
 }

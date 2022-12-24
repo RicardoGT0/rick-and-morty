@@ -17,14 +17,23 @@ onClose: La función que se va a ejecutar cuando el usuario haga click
 */
 import './Card.css'
 
-export default function Card({name, species, gender, image, onClose}) {
+export default function Card({ name, species, gender, image, onClose }) {
    return (
       <div className='card'>
-         <button onClick={onClose}>X</button>
-         <h2>{name}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <img  src={image} alt="" /> 
+         <div className='divButton'>
+            <button className='buttonCard' onClick={onClose}>X</button>
+         </div>
+         <div className='descriptionbox'>
+            <img className='imgChar' src={image} alt='' />
+            <div className='description'>
+
+               <div>
+                  <h2>{name}</h2>
+                  <h2>{species}</h2>
+                  <h2>{gender}</h2>
+               </div>
+            </div>
+         </div>
       </div>
    );
 }

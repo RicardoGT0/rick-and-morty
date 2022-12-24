@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/por-que-el-espacio-es-frio-1617903788.jpg");
+  background-attachment: fixed;
 }
 
 code {
