@@ -1,0 +1,10 @@
+nav {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    background-color: purple;
+    border: white;
+    height: 40px;
+  }
+  

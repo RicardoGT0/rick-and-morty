@@ -13,7 +13,7 @@ import './Cards.css';
 import Card from './Card';
 
 export default function Cards(props) {
-   const { characters } = props;
+   const { characters, onClose } = props;
    const lista = characters.map((c, index) => {
       return (
          <Card key={index}
@@ -21,7 +21,8 @@ export default function Cards(props) {
             species={c.species}
             gender={c.gender}
             image={c.image}
-            onClose={c.onClose}
+            onClose={onClose}
+            id={c.id}
          />
       )
    });
