@@ -26,6 +26,8 @@ export default function Cards(props) {
          />
       )
    });
-   return <div id='cards'>{lista}</div>
-   
+   return <>
+      <div id='cards'>{lista}</div>
+   </>
+
 }

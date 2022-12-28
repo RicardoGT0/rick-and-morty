@@ -1,10 +1,28 @@
-nav {    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-items: center;
-    background-color: black;
-    border: white;
-    height: 40px;
-  }
-  
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
+  background-color: black;
+  border: white;
+  height: 40px;
+}
+
+.linkBox {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.enlaces {
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+}
+.enlaces:hover{
+  color: purple;
+}

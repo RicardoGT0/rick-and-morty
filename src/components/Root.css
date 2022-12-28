@@ -1,0 +1,7 @@
+.textroot{
+    display: flex;
+    justify-content: center;
+    
+    color: aliceblue;
+    font-size: 500%;
+}
