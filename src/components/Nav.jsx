@@ -10,7 +10,7 @@ export default function Nav({ func }) {
         <nav>
             <div className='linkBox'>
                 <Link to="home" className='enlaces'>Inicio</Link>
-                <Link to="details" className='enlaces'>Detalles</Link>
+                {/* <Link to="details" className='enlaces'>Detalles</Link> */}
                 <Link to="about" className='enlaces'>Acerca de</Link>
             </div>
             <SearchBar onSearch={func} />

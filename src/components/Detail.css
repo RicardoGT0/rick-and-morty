@@ -1,0 +1,29 @@
+.textDetail{
+    color: aliceblue;
+    font-size: xx-large;
+}
+
+.detailBox{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    
+}
+
+.detailImg{
+    border-style: groove;    
+    border-color: white;
+    border-radius: 5%;
+    height: fit-content;
+}
+.detailDescription{
+    display: flex;
+    align-items:  center;
+    
+    
+}

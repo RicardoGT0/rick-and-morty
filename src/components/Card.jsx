@@ -15,16 +15,21 @@ onClose: La función que se va a ejecutar cuando el usuario haga click
          en el botón de cerrar.
 
 */
+import { Link } from 'react-router-dom';
 import './Card.css'
+
 
 export default function Card({ id, name, species, gender, image, onClose }) {
    return (
       <div className='card'>
          <div className='divButton'>
-            <button className='buttonCard' onClick={()=>{onClose(id)}}>X</button>
+            <button className='buttonCard' onClick={() => { onClose(id) }}>X</button>
          </div>
+
          <div className='descriptionbox'>
-            <img className='imgChar' src={image} alt='' />
+            <Link to={`/details/${id}`} >
+               <img className='imgChar' src={image} alt='' />
+            </Link>
             <div className='description'>
                <div>
                   <h2>{name}</h2>
@@ -33,6 +38,7 @@ export default function Card({ id, name, species, gender, image, onClose }) {
                </div>
             </div>
          </div>
-      </div>
+
+      </div >
    );
 }
