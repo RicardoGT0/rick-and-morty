@@ -15,8 +15,7 @@ function App() {
     fetch(`https://rickandmortyapi.com/api/character/`)
       .then((response) => response.json())
       .then(({ results }) => {
-        const data = results.filter((charac) => charac.name.includes(character))
-        console.log(data);
+        const data = results.filter((charac) => charac.name.toLowerCase().includes(character.toLowerCase()))
         if (data) {
           setCharacters((oldData) => [...oldData, ...data]);
         } else {
