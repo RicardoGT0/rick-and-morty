@@ -1,4 +1,7 @@
-.textabout{
+.divAbout{
+    text-align: center;    
+}
+.textabout{    
     color: aliceblue;
     font-size: xx-large;
 }

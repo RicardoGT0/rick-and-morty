@@ -1,7 +1,10 @@
-.textroot{
+.divRoot{    
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    
+    align-items: center;
+}
+.textroot{    
     color: aliceblue;
-    font-size: 500%;
+    font-size: 400%;
 }

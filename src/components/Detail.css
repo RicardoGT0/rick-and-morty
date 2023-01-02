@@ -4,15 +4,12 @@
 }
 
 .detailBox{
-    
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 5%;
     padding-left: 3%;
-    padding-right: 3%;
-    
-    
+    padding-right: 3%;   
 }
 
 .detailImg{
@@ -22,8 +19,7 @@
     height: fit-content;
 }
 .detailDescription{
+    text-align: center;
     display: flex;
-    align-items:  center;
-    
-    
+      
 }
