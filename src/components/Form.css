@@ -32,6 +32,13 @@
     height: 35px;
     padding: 10px;
 }
+.dangerInputLogin{
+    font-size: large;
+    font-style: oblique;
+    height: 35px;
+    padding: 10px;
+    border-color: red;
+}
 
 .labelLogin {
     font-size: xx-large;

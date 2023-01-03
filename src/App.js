@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Route, Routes } from 'react-router'
+import { useEffect, useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
 import Cards from './components/Cards'
 import Nav from './components/Nav'
@@ -10,8 +10,26 @@ import Root from './components/Root'
 
 function App() {
   const [characters, setCharacters] = useState([])
+  const [access, setAccess] = useState(false);
+  const username = 'ejemplo@gmail.com';
+  const password = '1Password';
+  const navigate = useNavigate();
 
-  function onSearch(character) {
+  const login = (userData) => {
+    if (userData.password === password && userData.userName === username) {
+      setAccess(true);
+      navigate("/home");
+      alert("Bienvenidos a nuestra app");
+    } else {
+      alert("username y password incorrectos");
+    }
+  }
+
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
+
+  const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/`)
       .then((response) => response.json())
       .then(({ results }) => {
@@ -29,6 +47,7 @@ function App() {
     setCharacters(lista)
   }
 
+
   return (
     <div className='App'>
       <Nav func={onSearch} />
@@ -36,7 +55,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Root />}
+          element={<Root login={login} />}
         />
         <Route
           path='/home'
