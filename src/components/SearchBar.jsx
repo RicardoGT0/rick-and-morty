@@ -12,10 +12,10 @@ export default function SearchBar({ onSearch }) {
    const Location = useLocation()
    if (Location.pathname === '/home') {
       return (
-         <div className='divSearch'>
+         <form className='divSearch' onSubmit={(e)=>{e.preventDefault()}}>
             <input type='search' placeholder='Nombre Personaje' onChange={handleInputChange} />
-            <button onClick={() => onSearch(nombre)}>Agregar</button>
-         </div>
+            <button className='buttonSearch' onClick={() => onSearch(nombre)} type='submit'>Agregar</button>
+         </form>
       );
    }
 }

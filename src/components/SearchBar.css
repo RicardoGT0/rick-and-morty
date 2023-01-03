@@ -1,3 +1,18 @@
 .divSearch{
     padding: 10px;
 }
+
+.buttonSearch {
+    font-size: large;
+    font-style: oblique;
+    font-weight: bold;
+    border-style: none;
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    color:white
+}
+
+.buttonSearch:hover{
+    color: red;
+}
