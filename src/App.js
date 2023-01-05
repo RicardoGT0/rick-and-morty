@@ -6,28 +6,17 @@ import Nav from './components/Nav'
 import About from './components/About'
 import Details from './components/Details'
 import Root from './components/Root'
+import { useSelector } from 'react-redux'
 /* import characters from './data.js' */
 
 function App() {
   const [characters, setCharacters] = useState([])
-  const [access, setAccess] = useState(false);
-  const username = 'ejemplo@gmail.com';
-  const password = '1Password';
   const navigate = useNavigate();
-
-  const login = (userData) => {
-    if (userData.password === password && userData.userName === username) {
-      setAccess(true);
-      navigate("/home");
-      alert("Bienvenidos a nuestra app");
-    } else {
-      alert("username y password incorrectos");
-    }
-  }
+  const access = useSelector((state)=>state.access);
 
   useEffect(() => {
     !access && navigate('/');
-  }, [access]);
+  }, [access, navigate]);
 
   const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/`)
@@ -47,7 +36,6 @@ function App() {
     setCharacters(lista)
   }
 
-
   return (
     <div className='App'>
       <Nav func={onSearch} />
@@ -55,7 +43,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Root login={login} />}
+          element={<Root />}
         />
         <Route
           path='/home'

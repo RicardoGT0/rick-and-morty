@@ -7,7 +7,7 @@ export default function Root({login}) {
     <div className='divRoot'>
       <h1 className='textroot'>Rick & Morty</h1>
       <h4 className='textroot'>By Henry's Student</h4>
-      <Form login={login}/>
+      <Form />
     </div>
   )
 }
