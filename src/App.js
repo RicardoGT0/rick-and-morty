@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
 import Cards from './components/Cards'
@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux'
 /* import characters from './data.js' */
 
 function App() {
-  const [characters, setCharacters] = useState([])
   const navigate = useNavigate();
   const access = useSelector((state)=>state.access);
 
@@ -18,27 +17,10 @@ function App() {
     !access && navigate('/');
   }, [access, navigate]);
 
-  const onSearch = (character) => {
-    fetch(`https://rickandmortyapi.com/api/character/`)
-      .then((response) => response.json())
-      .then(({ results }) => {
-        const data = results.filter((charac) => charac.name.toLowerCase().includes(character.toLowerCase()))
-        if (data) {
-          setCharacters((oldData) => [...oldData, ...data]);
-        } else {
-          window.alert('No hay personajes con ese ID');
-        }
-      });
-  }
-
-  const onClose = (id) => {
-    const lista = characters.filter((personaje) => personaje.id !== id)
-    setCharacters(lista)
-  }
-
+  
   return (
     <div className='App'>
-      <Nav func={onSearch} />
+      <Nav />
       <hr />
       <Routes>
         <Route
@@ -47,7 +29,7 @@ function App() {
         />
         <Route
           path='/home'
-          element={<Cards characters={characters} onClose={onClose} />}
+          element={<Cards />}
         />
         <Route
           path="/about"

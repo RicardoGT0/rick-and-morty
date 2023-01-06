@@ -11,9 +11,17 @@ Acá un ejemplo de la documentación de React.
 */
 import './Cards.css';
 import Card from './Card';
+import { connect } from 'react-redux';
+import * as action from '../redux/action_type'
 
-export default function Cards(props) {
-   const { characters, onClose } = props;
+
+function Cards({characters, setCards}) {
+   
+   const onClose = (id) => {
+      const lista = characters.filter((personaje) => personaje.id !== id)
+      setCards(lista)
+    }
+
    const lista = characters.map((c, index) => {
       return (
          <Card key={index}
@@ -31,3 +39,19 @@ export default function Cards(props) {
    </>
 
 }
+
+const mapStateToProps=(state)=>{
+   return{
+      characters:state.cards,
+   }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+   return{
+      setCards: (cardsData)=>dispatch({
+         type: action.SETCARDS,
+         payload: cardsData,
+      })
+   }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Cards)

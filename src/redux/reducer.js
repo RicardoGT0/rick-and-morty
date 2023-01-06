@@ -4,6 +4,7 @@ const initialState = {
     username: '',
     password: '',
     access: false,
+    cards: [],
 }
 
 export default function rootReducer(state = initialState, { type, payload }) {
@@ -20,7 +21,22 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 ...state,
                 access: false,
                 username: '',
-                password: ''
+                password: '',
+            }
+        case action.SETCARDS:
+            return {
+                ...state,
+                cards: payload,
+            }
+        case action.ADDFAV:
+            return {
+                ...state,
+                cards: state.cards.map((e) => { if (e.id === payload) e.fav = true })
+            }
+        case action.REMOVEFAV:
+            return {
+                ...state,
+                cards: state.cards.map((e) => { if (e.id === payload) e.fav = false })
             }
         default:
             return state;
