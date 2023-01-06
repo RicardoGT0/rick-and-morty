@@ -4,7 +4,6 @@ const initialState = {
     username: 'ejemplo@gmail.com',
     password: '1Password',
     access: false,
-
 }
 
 export default function rootReducer(state = initialState, { type, payload }) {
@@ -17,7 +16,9 @@ export default function rootReducer(state = initialState, { type, payload }) {
         case action.ACCESSOFF:
             return {
                 ...state,
-                access: false
+                access: false,
+                username: '',
+                password: ''
             }
         default:
             return state;
