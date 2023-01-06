@@ -5,13 +5,14 @@ nav {
   align-items: center;
   background-color: black;
   border: white;
-  height: 40px;
+  padding-top: 7px;
 }
 
 .linkBox {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -20,16 +21,19 @@ nav {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: x-large;
   font-weight: bolder;
-  color: white; 
+  color: white;
   text-decoration: none;
 }
-.enlaces:hover{
+
+.enlaces:hover {
   color: purple;
 }
-.enlacesBoton{
+
+.enlacesBoton {
   border-style: none;
   background: none;
 }
-.enlacesBoton:hover{
+
+.enlacesBoton:hover {
   color: red;
 }

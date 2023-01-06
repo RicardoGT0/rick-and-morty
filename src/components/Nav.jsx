@@ -15,8 +15,9 @@ function Nav({ func,accessOff }) {
                     <Link to="home" className='enlaces'>Inicio</Link>
                     <Link to="about" className='enlaces'>Acerca de</Link>
                     <button className='enlaces enlacesBoton' onClick={accessOff}>LogOut</button>
+                    <SearchBar onSearch={func} />
                 </div>
-                <SearchBar onSearch={func} />
+                
             </nav>
         )
     }
