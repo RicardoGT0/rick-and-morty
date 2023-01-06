@@ -12,7 +12,7 @@ export default function About() {
         <a className='textabout'
           target="_blank"
           rel="noreferrer"
-          href='https://www.linkedin.com/in/ricardo-gonzalez-tello-7643bb1a9'
+          href='https://www.linkedin.com/in/ricardo-gonzález-tello-7643bb1a9'
         >LinkedIn</a>
       </div>
       <div> 
