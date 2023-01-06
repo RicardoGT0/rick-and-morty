@@ -1,8 +1,8 @@
 import * as action from "./action_type";
 
 const initialState = {
-    username: 'ejemplo@gmail.com',
-    password: '1Password',
+    username: '',
+    password: '',
     access: false,
 }
 
@@ -11,7 +11,9 @@ export default function rootReducer(state = initialState, { type, payload }) {
         case action.ACCESSON:
             return {
                 ...state,
-                access: true
+                access: true,
+                username: payload.userName,
+                password: payload.passWord,
             }
         case action.ACCESSOFF:
             return {

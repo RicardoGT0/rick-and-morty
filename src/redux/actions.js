@@ -1,8 +1,9 @@
 import * as action from './action_type'
 
-export function accessOn() {
+export function accessOn(userData) {
     return {
         type: action.ACCESSON,
+        payload:userData,
     };
 }
 

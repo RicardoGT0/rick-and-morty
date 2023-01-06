@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import './Form.css'
+import * as action from '../redux/action_type'
 
 
-function Form({ password, username, accessOn }) {
+function Form({ accessOn }) {
     const [passWord, setPassWord] = useState('')
     const [userName, setUserName] = useState('')
     const [errorUser, SetErrorUser] = useState(true)
@@ -15,13 +16,13 @@ function Form({ password, username, accessOn }) {
     const navigate = useNavigate();
 
     const login = () => {
-        if (passWord === password && userName === username) {
-            accessOn();
-            navigate("/home");
-            alert(`Bienvenidos a nuestra app ${username}`);
-        } else {
+        //if (passWord === password && userName === username) {
+        accessOn({ userName, passWord });
+        navigate("/home");
+        alert(`Bienvenidos a nuestra app ${userName}`);
+        /* } else {
             alert("username y password incorrectos");
-        }
+        } */
     }
 
     const valUser = (value) => {
@@ -32,6 +33,7 @@ function Form({ password, username, accessOn }) {
         }
         setUserName(value)
     }
+    
     const valPassword = (value) => {
         if (regularPassword.test(value)) {
             setErrorPassword(false)
@@ -47,7 +49,6 @@ function Form({ password, username, accessOn }) {
     }
 
     return (
-
         <form className="divForm" onSubmit={((e) => { handleSubmit(e) })}>
             <h2 className='loginText'>Login</h2>
             <div className='divCaptura'>
@@ -78,19 +79,16 @@ function Form({ password, username, accessOn }) {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        access: state.access,
-        username: state.username,
-        password: state.password
-    }
-}
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
         // dispatching plain actions
-        accessOn: () => dispatch({ type: 'ACCESSON' })
+        accessOn: (userData) => dispatch({
+            type: action.ACCESSON,
+            payload: userData
+        })
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form)
+export default connect(null, mapDispatchToProps)(Form)
