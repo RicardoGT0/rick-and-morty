@@ -14,7 +14,7 @@ function Nav({ func,accessOff }) {
                 <div className='linkBox'>
                     <Link to="home" className='enlaces'>Inicio</Link>
                     <Link to="about" className='enlaces'>Acerca de</Link>
-                    <button className='enlaces' onClick={accessOff}>LogOut</button>
+                    <button className='enlaces enlacesBoton' onClick={accessOff}>LogOut</button>
                 </div>
                 <SearchBar onSearch={func} />
             </nav>
