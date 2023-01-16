@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { connect } from 'react-redux'
-import * as action from '../redux/action_type'
+import * as action from '../redux/actions'
 import './SearchBar.css'
 
  function SearchBar({ cards,setCards }) {
@@ -43,10 +43,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
    return{
-      setCards: (cardsData)=>dispatch({
-         type: action.SETCARDS,
-         payload: cardsData,
-      })
+      setCards: (cardsData)=>dispatch(action.setCards(cardsData))
    }
 }
 

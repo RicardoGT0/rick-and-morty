@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import './Form.css'
-import * as action from '../redux/action_type'
+import * as action from '../redux/actions'
 
 
 function Form({ accessOn }) {
@@ -83,11 +83,7 @@ function Form({ accessOn }) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // dispatching plain actions
-        accessOn: (userData) => dispatch({
-            type: action.ACCESSON,
-            payload: userData
-        })
+        accessOn: (userData) => dispatch(action.accessOn(userData))
     }
 }
 

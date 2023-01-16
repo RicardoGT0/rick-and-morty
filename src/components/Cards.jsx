@@ -12,7 +12,7 @@ Acá un ejemplo de la documentación de React.
 import './Cards.css';
 import Card from './Card';
 import { connect } from 'react-redux';
-import * as action from '../redux/action_type'
+import * as action from '../redux/actions'
 
 
 function Cards({characters, setCards}) {
@@ -48,10 +48,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
    return{
-      setCards: (cardsData)=>dispatch({
-         type: action.SETCARDS,
-         payload: cardsData,
-      })
+      setCards: (cardsData)=>dispatch(action.setCards(cardsData))
    }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Cards)
