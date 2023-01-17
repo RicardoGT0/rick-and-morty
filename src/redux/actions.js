@@ -1,5 +1,6 @@
 import * as action from './action_type'
 
+
 export function accessOn(userData) {
     return {
         type: action.ACCESSON,
@@ -20,10 +21,10 @@ export function setCards(cardsData) {
     }
 }
 
-export function setFavs(cardsData) {
+export function setFavorite(id) {
     return {
-        type: action.ADDFAV,
-        payload: cardsData,
+        type: action.SETFAVORITE,
+        payload: id,
     }
 }
 

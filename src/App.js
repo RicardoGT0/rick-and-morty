@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import About from './components/About'
 import Details from './components/Details'
 import Root from './components/Root'
+import Favorites from './components/Favorites'
 import { useSelector } from 'react-redux'
 /* import characters from './data.js' */
 
@@ -28,8 +29,12 @@ function App() {
           element={<Root />}
         />
         <Route
-          path='/home'
+          path="/home"
           element={<Cards />}
+        />        
+        <Route
+          path="/favorites"
+          element={<Favorites />}
         />
         <Route
           path="/about"

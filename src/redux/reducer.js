@@ -28,15 +28,23 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 ...state,
                 cards: payload,
             }
-        case action.ADDFAV:
-            return {
-                ...state,
-                cards: state.cards.map((e) => { if (e.id === payload) e.fav = true })
+        case action.SETFAVORITE:
+            const temp= []
+            state.cards.forEach(element => {
+                const e={...element}
+                temp.push(e)
+            });
+            const personaje = temp.find((p) => p.id === payload) //payload==id
+            if (personaje.favorite) {
+                personaje.favorite = false
+            } else {
+                personaje.favorite = true
             }
-        case action.REMOVEFAV:
+            const newCards = temp.filter((p) => p.id !== payload)
+            newCards.push(personaje)
             return {
                 ...state,
-                cards: state.cards.map((e) => { if (e.id === payload) e.fav = false })
+                cards: newCards,
             }
         default:
             return state;

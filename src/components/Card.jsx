@@ -15,15 +15,26 @@ onClose: La función que se va a ejecutar cuando el usuario haga click
          en el botón de cerrar.
 
 */
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Card.css'
+import * as actions from '../redux/actions'
 
 
-export default function Card({ id, name, species, gender, image, onClose }) {
+
+export default function Card({ id, name, species, gender, image, onClose, favorite }) {
+   const dispatch = useDispatch()
+   const setFavorite = (id)=>(dispatch(actions.setFavorite(id)))
+
    return (
       <div className='card'>
          <div className='divButton'>
-            <button className='buttonCard' onClick={() => { onClose(id) }}>X</button>
+            <button className={favorite ? 'buttonCard' : 'favoriteButtonOff'}
+               onClick={()=>setFavorite(id)}
+            >♥</button>
+
+            {onClose?<button className='buttonCard'
+               onClick={() => { onClose(id) }}>X</button>: null}
          </div>
 
          <div className='descriptionbox'>

@@ -15,12 +15,12 @@ import { connect } from 'react-redux';
 import * as action from '../redux/actions'
 
 
-function Cards({characters, setCards}) {
-   
+function Cards({ characters, setCards }) {
+
    const onClose = (id) => {
       const lista = characters.filter((personaje) => personaje.id !== id)
       setCards(lista)
-    }
+   }
 
    const lista = characters.map((c, index) => {
       return (
@@ -31,6 +31,7 @@ function Cards({characters, setCards}) {
             image={c.image}
             onClose={onClose}
             id={c.id}
+            favorite={c.favorite}
          />
       )
    });
@@ -40,15 +41,15 @@ function Cards({characters, setCards}) {
 
 }
 
-const mapStateToProps=(state)=>{
-   return{
-      characters:state.cards,
+const mapStateToProps = (state) => {
+   return {
+      characters: state.cards,
    }
 }
 
-const mapDispatchToProps=(dispatch)=>{
-   return{
-      setCards: (cardsData)=>dispatch(action.setCards(cardsData))
+const mapDispatchToProps = (dispatch) => {
+   return {
+      setCards: (cardsData) => dispatch(action.setCards(cardsData)),
    }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Cards)
+export default connect(mapStateToProps, mapDispatchToProps)(Cards)

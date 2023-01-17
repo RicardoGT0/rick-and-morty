@@ -8,13 +8,22 @@
 
 .divButton{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
 }
 
 .buttonCard{
     font-size: xx-large;
     font-style: oblique;
     color: red;
+    border-style: none;
+    background: none;
+
+}
+
+.favoriteButtonOff{
+    font-size: xx-large;
+    font-style: oblique;
+    color: white;
     border-style: none;
     background: none;
 
