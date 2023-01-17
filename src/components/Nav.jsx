@@ -3,11 +3,10 @@ import SearchBar from './SearchBar'
 import './Nav.css'
 import { Link, useLocation } from 'react-router-dom'
 import { connect } from 'react-redux';
-import {accessOff} from '../redux/actions'
+import { accessOff } from '../redux/actions'
 
-function Nav({ func,accessOff }) {
+function Nav({ func, accessOff }) {
     const location = useLocation();
-    console.log(location);
     if (location.pathname !== '/') {
         return (
             <nav>
@@ -18,10 +17,9 @@ function Nav({ func,accessOff }) {
                     <button className='enlaces enlacesBoton' onClick={accessOff}>LogOut</button>
                     <SearchBar onSearch={func} />
                 </div>
-                
             </nav>
         )
     }
 }
 
-export default connect (null,{accessOff})(Nav)
+export default connect(null, { accessOff })(Nav)
