@@ -2,21 +2,24 @@
     width: 65%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;    
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     border-style: groove;
     border-width: 7px;
     border-color: white;
     background-color: grey;
-    height: 250px;
+    height: 320px;
     border-radius: 20px;
 
 }
-.divCaptura{
-    display: flex;    
+
+.divCaptura {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding-bottom: 20px;
 }
 
@@ -32,7 +35,8 @@
     height: 35px;
     padding: 10px;
 }
-.dangerInputLogin{
+
+.dangerInputLogin {
     font-size: large;
     font-style: oblique;
     height: 35px;
@@ -55,8 +59,25 @@
     background: none;
     width: fit-content;
     height: fit-content;
+    padding-bottom: 20px;
 }
 
-.buttonLogin:hover{
+.buttonLogin:hover {
     color: red;
+}
+
+.spanError {
+    color: red;
+    width: fit-content;
+    height: fit-content;    ;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.divError {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
