@@ -67,16 +67,16 @@ function Form({ accessOn }) {
         <form className="divForm" onSubmit={((e) => { handleSubmit(e) })}>
             <h2 className='loginText'>Login</h2>
             <div className='divCaptura'>
-                <div>
+                <div className='divFormInput'>
                     <label className='labelLogin'>Usuario: </label>
-                    <input className={errorUser ? 'dangerInputLogin' : 'inputLogin'}
+                    <input className={`inputLogin ${errorUser ? 'dangerInputLogin' : null}`}
                         type="text"
                         name="userName"
                         value={userName}
                         placeholder="Username@domain.com"
                         onChange={(e) => valUser(e.target.value)} />
                 </div>
-                <div>
+                <div className='divFormInput'>
                     <label className='labelLogin'>Contraseña: </label>
                     <input className={errorPassword ? 'dangerInputLogin' : 'inputLogin'}
                         type="password"

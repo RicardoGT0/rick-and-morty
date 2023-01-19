@@ -29,6 +29,7 @@
     font-size: 250%;
 }
 
+.dangerInputLogin,
 .inputLogin {
     font-size: large;
     font-style: oblique;
@@ -37,10 +38,6 @@
 }
 
 .dangerInputLogin {
-    font-size: large;
-    font-style: oblique;
-    height: 35px;
-    padding: 10px;
     border-color: red;
 }
 
@@ -69,7 +66,8 @@
 .spanError {
     color: red;
     width: fit-content;
-    height: fit-content;    ;
+    height: fit-content;
+    ;
     text-align: center;
     font-size: larger;
     font-weight: bold;
@@ -80,4 +78,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width:420px) {
+    .divForm {
+        flex-direction: row;
+        justify-content: center;
+        height: auto;
+    }
+
+    .divFormInput {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .dangerInputLogin,
+    .inputLogin {
+        height: auto;
+    }
 }
