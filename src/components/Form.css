@@ -91,10 +91,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     .dangerInputLogin,
     .inputLogin {
-        height: auto;
+        width: 85%;
     }
 }
