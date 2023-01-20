@@ -1,64 +1,58 @@
-.card{    
-    border-style: groove;    
+.card {
+    border-style: groove;
     border-width: 7px;
     border-color: white;
     background-color: grey;
     margin-top: 10px;
 }
 
-.divButton{
+.divButton {
     display: flex;
     justify-content: space-between;
 }
 
-.buttonCard{
+.buttonCard {
     font-size: xx-large;
     font-style: oblique;
     color: red;
     border-style: none;
     background: none;
-
 }
 
-.favoriteButtonOff{
-    font-size: xx-large;
-    font-style: oblique;
-    color: white;
-    border-style: none;
-    background: none;
 
-}
-
-.descriptionbox{
-    
+.descriptionbox {
     display: flex;
     justify-content: space-around;
     padding-bottom: 5%;
     padding-left: 3%;
-    padding-right: 3%;  
+    padding-right: 3%;
 }
 
-.imgChar{
-    border-style: groove;    
+.imgChar {
+    border-style: groove;
     border-color: black;
     border-radius: 5%;
 }
 
-.description{
+.description {
     display: flex;
-    align-items:  center;
-    text-align: center;   
+    align-items: center;
+    text-align: center;
 }
 
 @media (max-width:420px) {
-    .descriptionbox{
+    .descriptionbox {
         flex-direction: column;
         align-items: center;
         padding-top: 20px;
     }
 
-    .imgChar{
+    .imgChar {
         max-width: 100%;
     }
 
+    .divButton{
+        padding-top: 10px;
+        padding-right: 5px;
+    }
 }

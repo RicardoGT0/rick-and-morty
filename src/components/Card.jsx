@@ -24,17 +24,17 @@ import * as actions from '../redux/actions'
 
 export default function Card({ id, name, species, gender, image, onClose, favorite }) {
    const dispatch = useDispatch()
-   const setFavorite = (id)=>(dispatch(actions.setFavorite(id)))
+   const setFavorite = (id) => (dispatch(actions.setFavorite(id)))
 
    return (
       <div className='card'>
          <div className='divButton'>
-            <button className={favorite ? 'buttonCard' : 'favoriteButtonOff'}
-               onClick={()=>setFavorite(id)}
-            >♥</button>
+            <button className='buttonCard'
+               onClick={() => setFavorite(id)}
+            >{favorite ? '💜' : '🖤'}</button>
 
-            {onClose?<button className='buttonCard'
-               onClick={() => { onClose(id) }}>X</button>: null}
+            {onClose ? <button className='buttonCard'
+               onClick={() => { onClose(id) }}>X</button> : null}
          </div>
 
          <div className='descriptionbox'>
