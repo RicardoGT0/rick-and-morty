@@ -9,11 +9,15 @@
 .divButton {
     display: flex;
     justify-content: space-between;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 .buttonCard {
     font-size: xx-large;
     font-style: oblique;
+    font-weight: bold;
     color: red;
     border-style: none;
     background: none;
