@@ -11,12 +11,32 @@ function SearchBar({ cards, setCards }) {
       setNombre(target.value)
    }
 
+   const paginaPersonajes = async (hoja = 1) => {
+      let response;
+      if (hoja === 1) {
+         response = await fetch(`https://rickandmortyapi.com/api/character/`)
+      } else {
+         response = await fetch(`https://rickandmortyapi.com/api/character/?page=${hoja}`)
+      }
+      const { results } = await response.json()
+      return results
+   }
+
    const onSearch = async (character) => {
-      const response = await fetch(`https://rickandmortyapi.com/api/character/`)
-      const {results} = await response.json()
-      const data = results.filter((charac) =>
-         charac.name.toLowerCase().includes(character.toLowerCase())
-      )
+      let results = [];
+      let data = []; 
+      try {
+         for (let i = 1; i < 42; i++) {
+            const pagina = await paginaPersonajes(i)
+            results = [...results, ...pagina]
+         }
+         data = results.filter((charac) =>
+            charac.name.toLowerCase().includes(character.toLowerCase())
+         )
+      } catch (error) {
+         console.error(error)
+      }
+
       if (data) {
          const nuevo = [];
          data.forEach(remoto => {
@@ -27,7 +47,7 @@ function SearchBar({ cards, setCards }) {
                }
             });
             if (!flag) {
-               remoto.favorite=false;
+               remoto.favorite = false;
                nuevo.push(remoto)
             }
          });
